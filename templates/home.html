@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}BCCA Leadership Teams{% endblock %}
+
+{% block content %}
+    <main class="page-content">
+        <section class="hero">
+            <p class="eyebrow">Building community together</p>
+            <h1>BCCA Leadership Teams</h1>
+            <p>Meet the people helping BCCA grow through teamwork, service, and creativity.</p>
+        </section>
+
+        <section class="team-grid" aria-label="Leadership teams">
+            <a class="team-card" href="{% url 'team_detail' 'management' %}">
+                <span>Management</span><span aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="team-card" href="{% url 'team_detail' 'procurement' %}">
+                <span>Procurement</span><span aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="team-card" href="{% url 'team_detail' 'community' %}">
+                <span>Community</span><span aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="team-card" href="{% url 'team_detail' 'documentation' %}">
+                <span>Documentation</span><span aria-hidden="true">&rarr;</span>
+            </a>
+        </section>
+    </main>
+{% endblock %}

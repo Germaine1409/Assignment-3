@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ team.name }}{% endblock %}
+
+{% block content %}
+    <main class="page-content">
+        <section class="team-intro">
+            <p class="eyebrow">BCCA Leadership</p>
+            <h1>{{ team.name }}</h1>
+            <p>{{ team.description }}</p>
+        </section>
+
+        <section class="members-section">
+            <h2>Team Members</h2>
+            <button class="members-button" type="button" aria-expanded="false" aria-controls="member-list">
+                See members
+            </button>
+            <ul id="member-list" class="member-list" hidden>
+                {% for member in team.members %}
+                    <li>{{ member }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <a class="back-link" href="{% url 'team_list' %}">&larr; Back to Teams</a>
+    </main>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/team-members.js' %}"></script>
+{% endblock %}
